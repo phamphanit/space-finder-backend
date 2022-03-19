@@ -22,7 +22,7 @@ export class SpaceStack extends Stack {
             handler: 'handler'
         })
 
-        const helloLamdaIntegration = new LambdaIntegration(helloLamda)
+        const helloLamdaIntegration = new LambdaIntegration(helloLamdaNodeJs)
         const helloLamdaResource = this.api.root.addResource('hello');
         helloLamdaResource.addMethod('GET', helloLamdaIntegration);
     }
