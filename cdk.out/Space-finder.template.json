@@ -362,6 +362,30 @@
         "aws:cdk:path": "Space-finder/helloLamdaNodejs/ServiceRole/Resource"
       }
     },
+    "helloLamdaNodejsServiceRoleDefaultPolicy5FDEC1C8": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "s3:ListAllMyBuckets",
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "helloLamdaNodejsServiceRoleDefaultPolicy5FDEC1C8",
+        "Roles": [
+          {
+            "Ref": "helloLamdaNodejsServiceRole9F910F5F"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Space-finder/helloLamdaNodejs/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
     "helloLamdaNodejsFD5EC49F": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -369,7 +393,7 @@
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
           },
-          "S3Key": "14e216dd146ef32a19e2056446bf929f44eb8ccf0c7661f54e3bfa4609c4f881.zip"
+          "S3Key": "3d09e3f796a4387fbf97413cdc5b384fd0f3a30a46d6c25b9428cb135f106801.zip"
         },
         "Role": {
           "Fn::GetAtt": [
@@ -386,11 +410,12 @@
         "Runtime": "nodejs14.x"
       },
       "DependsOn": [
+        "helloLamdaNodejsServiceRoleDefaultPolicy5FDEC1C8",
         "helloLamdaNodejsServiceRole9F910F5F"
       ],
       "Metadata": {
         "aws:cdk:path": "Space-finder/helloLamdaNodejs/Resource",
-        "aws:asset:path": "asset.14e216dd146ef32a19e2056446bf929f44eb8ccf0c7661f54e3bfa4609c4f881",
+        "aws:asset:path": "asset.3d09e3f796a4387fbf97413cdc5b384fd0f3a30a46d6c25b9428cb135f106801",
         "aws:asset:is-bundled": true,
         "aws:asset:property": "Code"
       }
@@ -398,7 +423,7 @@
     "CDKMetadata": {
       "Type": "AWS::CDK::Metadata",
       "Properties": {
-        "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQT0+EMBDFP8veSxV145ld480/Wb2ToR3ZAm0J07ohhO/uQDWsp/ebl/ZNX+9k/ihvd3ChTOk260wlp48AqhVslRP0poaAFxjldEIKRW/E8ctdYaGUjy6IJ+w7P1pkZPdq4rQaFy8BX/VxUHgA2obfzMQvGM5eL1aiWRiwvN536RzrLDqwlQY5sfGOgzVExjvxHJ0KC7D9x7PQowPrNTf7hCqFrDALui+BCAPJYhGe5SGqFsP6urSjdF5jQ/J1lS2VU95i6GPYWqwhS03j6n+VmI/eaZNuLoGyoZvv/EHme7nfNWRMNvAvGovylPQHCzmRuJkBAAA="
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQT0+EMBDFP8veyyjqxjO7xpt/snonQ1vZAdoSWtwQwnd3SjWsp/d7L+2bTu8gf4TbHV58JlWbdVTB/BFQtoKjcsaeagz6ghPMJ+1D0ZM4ftkrLKR0ow3iSfedm4xm5PTKcVutY5aAr7pxkPqAfjO/nYlfdDg7FaNEiyA0PN516VzUd9eRnKJNtIgOTaUQ5hjpwZD35Kx4Hq0METj+40WoyaJxilf9xCq1rrAIf1+i9zp4KKKwh8MoWx3W56YZpXVKNx5eV9laueVtDP0YtrXWkrg32frfjsxHZxWlm7EQGn/znT9Avof9rvFE2cDfSkbDKekPbw99YaoBAAA="
       },
       "Metadata": {
         "aws:cdk:path": "Space-finder/CDKMetadata/Default"
