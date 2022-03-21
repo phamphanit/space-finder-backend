@@ -31,6 +31,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@types/aws-lambda": "^8.10.93",
     "@types/uuid": "^8.3.4",
     "aws-sdk": "^2.1096.0",
     "tsc": "^2.0.4",
